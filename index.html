@@ -350,7 +350,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-04 13:54:03" itemprop="dateModified" datetime="2018-11-04T13:54:03+08:00">2018-11-04</time>
+                <time title="修改时间：2018-11-04 14:17:53" itemprop="dateModified" datetime="2018-11-04T14:17:53+08:00">2018-11-04</time>
               
             
           </span>
@@ -558,6 +558,173 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wjy-jy.github.io/2018/11/01/搭建git服务器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WJY">
+      <meta itemprop="description" content="王加雨的技术生活博客！">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WJY的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/01/搭建git服务器/" itemprop="url">
+                  mysql-InnoDB引擎加锁机制
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-01 20:11:32" itemprop="dateCreated datePublished" datetime="2018-11-01T20:11:32+08:00">2018-11-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-04 14:18:08" itemprop="dateModified" datetime="2018-11-04T14:18:08+08:00">2018-11-04</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Ubuntu搭建git服务器"><a href="#Ubuntu搭建git服务器" class="headerlink" title="Ubuntu搭建git服务器"></a>Ubuntu搭建git服务器</h1><h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+<h2 id="创建git用户："><a href="#创建git用户：" class="headerlink" title="创建git用户："></a>创建git用户：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo adduser git</span><br></pre></td></tr></table></figure>
+<h2 id="创建证书登录"><a href="#创建证书登录" class="headerlink" title="创建证书登录"></a>创建证书登录</h2><p>在客户端生成，ssh公钥<code>id_rsa.pub</code>;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+<p>服务器，登录git用户，创建文件<code>/home/git/.ssh/authorized_keys</code>;然后，将客户端公钥内容复制到服务器<code>authorized_keys</code>中，一行一个；<br>这里可以执行命令实现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i 本地地址/.ssh/id_rsa.pub 服务器用户名@服务器IP -p 端口号</span><br></pre></td></tr></table></figure>
+<h2 id="初始化git仓库"><a href="#初始化git仓库" class="headerlink" title="初始化git仓库"></a>初始化git仓库</h2><p>选定一个目录作为git仓库，这里我们用<code>/srv/sample.git</code>,在<code>/srv</code>目录下输入命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo git init --bare sample.git</span><br></pre></td></tr></table></figure>
+<p>==ps:<code>--bare</code> 参数指定初始化一个空git仓库==</p>
+<h2 id="更改git目录权限"><a href="#更改git目录权限" class="headerlink" title="更改git目录权限"></a>更改git目录权限</h2><p>因为服务器上的git仓库纯粹为了共享，所以不能让用户直接登录去更改工作区，并且服务器上的git仓库一般以.git结尾；然后把目录owner改为<code>git</code>；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R git:git sample.git</span><br></pre></td></tr></table></figure>
+<h2 id="禁用shell登录"><a href="#禁用shell登录" class="headerlink" title="禁用shell登录"></a>禁用shell登录</h2><p>出于安全考虑，我们需要使git用户ssh链接只能进行git相关操作，这里可以通过编辑<code>/etc/passwd</code>文件实现；找到下面一行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git:x:1000:1000:git,,,:/home/git:/bin/bash</span><br></pre></td></tr></table></figure>
+<p>修改为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git:x:1000:1000:git,,,:/home/git:/usr/bin/git-shell</span><br></pre></td></tr></table></figure>
+<h2 id="远程clone仓库"><a href="#远程clone仓库" class="headerlink" title="远程clone仓库"></a>远程clone仓库</h2><p>在客户端执行clone命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@47.52.238.206:/home/git/sample.git</span><br><span class="line">Cloning into <span class="string">'sample'</span>...</span><br><span class="line">warning: You appear to have cloned an empty repository.</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -601,7 +768,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -609,6 +776,21 @@
 
               
 
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
               
             </nav>
           
