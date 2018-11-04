@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="王加雨的技术生活博客！">
+<meta name="keywords" content="java">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WJY的小站">
+<meta property="og:url" content="https://wjy-jy.github.io/index.html">
+<meta property="og:site_name" content="WJY的小站">
+<meta property="og:description" content="王加雨的技术生活博客！">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WJY的小站">
+<meta name="twitter:description" content="王加雨的技术生活博客！">
+
+
+
+
+
+
+  <link rel="canonical" href="https://wjy-jy.github.io/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>WJY的小站</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WJY的小站</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">做你认为很难的事情，做过之后你会感觉不过如此！</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home menu-item-active">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wjy-jy.github.io/2018/11/01/mysql-InnoDB引擎加锁/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WJY">
+      <meta itemprop="description" content="王加雨的技术生活博客！">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WJY的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/01/mysql-InnoDB引擎加锁/" itemprop="url">
+                  mysql-InnoDB引擎加锁机制
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-01 20:11:32" itemprop="dateCreated datePublished" datetime="2018-11-01T20:11:32+08:00">2018-11-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-02 08:56:24" itemprop="dateModified" datetime="2018-11-02T08:56:24+08:00">2018-11-02</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="mysql-InnoDB引擎加锁机制及事物隔离级别"><a href="#mysql-InnoDB引擎加锁机制及事物隔离级别" class="headerlink" title="mysql/InnoDB引擎加锁机制及事物隔离级别"></a>mysql/InnoDB引擎加锁机制及事物隔离级别</h1><ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#多版本并发控制mvcc">多版本并发控制MVCC</a></li>
+<li><a href="#cluster-index聚簇索引">Cluster Index：聚簇索引</a></li>
+<li><a href="#2pltow-phase-locking">2PL：Tow-Phase Locking</a></li>
+<li><a href="#事务隔离级别-isolation-leve">事务隔离级别 Isolation Leve</a></li>
+<li><a href="#加锁过程分析">加锁过程分析</a><ul>
+<li><a href="#一条简单的sql加锁实现分析">一条简单的SQL加锁实现分析</a></li>
+<li><a href="#复杂sql分析">复杂SQL分析：</a></li>
+</ul>
+</li>
+<li><a href="#死锁原理与分析">死锁原理与分析</a></li>
+<li><a href="#本文相关知识点">本文相关知识点：</a></li>
+</ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本文是基于mysql/innodb数据库引擎加锁分析，其他引擎会有较大区别。会从多版本并发控制，聚簇索引，2PL，事物隔离级别，加锁过程分析，死锁原理及分析。</p>
+<h2 id="多版本并发控制MVCC"><a href="#多版本并发控制MVCC" class="headerlink" title="多版本并发控制MVCC"></a>多版本并发控制MVCC</h2><p>&#160; &#160; &#160; &#160;MySQL InnoDB存储引擎的实现是基于多版本并发控制协议–<a href="https://blog.csdn.net/asdfsadfasdfsa/article/details/79434794" target="_blank" rel="noopener">MCCC (Multi-Version Concurrency Control)</a>(注:与MVCC相对应的，是基于锁的并发控制，Lock-Based Concurrency Control)。MVCC最大的好处就是：<strong>读不加锁，读写不冲突</strong>。在读多写少的应用中，可以极大的提高并发性能，这也是现阶段几乎所有RDBMS都支持MVCC的原因。</p>
+<p>&#160; &#160; &#160; &#160;在MVCC并发控制中，读操作可以分为两类：<strong><font color="Brown">快照读（Snapshot Read）与当前读（Current Read）</font></strong>。快照读，读取的是记录的课件版本（有可能是历史版本-RR下同事物读取的是历史版本），不用加锁。当前读，读取的是记录的最新版本，并且，当前读返回的记录都会加上锁，保证其他事物不会并发修改这条记录。</p>
+<p>&#160; &#160; &#160; &#160;在一个支持MVCC并发控制的系统中，哪些读操作是快照读？哪些是当前读呢？以MySQL InnoDB为例：</p>
+<ul>
+<li><p>快照读：简单的select操作，属于快照读，不加锁。  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> ?;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当前读：特殊读操作，插入/更新/删除，都属于当前读，需要加锁。  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> ? <span class="keyword">lock</span> <span class="keyword">in</span> <span class="keyword">share</span> <span class="keyword">mode</span>;</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> ? <span class="keyword">for</span> <span class="keyword">update</span>;</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">table</span> <span class="keyword">values</span> (…);</span><br><span class="line"><span class="keyword">update</span> <span class="keyword">table</span> <span class="keyword">set</span> ? <span class="keyword">where</span> ?;</span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> ?;</span><br></pre></td></tr></table></figure>
+<p>以上所有语句，都属于当前读，读取的是当前版本，并且读取之后，需要保证其他事物不能修改当前记 录，对读取加锁。其中第一条语句属于 S锁（共享锁），其他都是 X锁（排它锁）。</p>
+</li>
+</ul>
+<p>&#160; &#160; &#160; &#160;为什么 插入、删除、更新 操作，都为当前读？我们看看数据库执行流程：</p>
+<p><img src="./image/569491-20160531125430289-1207375285.jpg" alt="图片丢失">  </p>
+<p>&#160; &#160; &#160; &#160;从图中，可以看到，当一个update语句发给MySQL后，MySQL Server会根据where条件读取第一条满足条件的记录，然后InnoDB会把满足条件的数据，加锁（current read）返回，当MySQL Server收到记录后，在发起一条update请求，更新这条记录。一条记录执行完成，在读取下一条记录，直到没有满足条件的记录为止。因此update内部，就包含当前读。同理，delete操作也是一样。insert操作会稍微不同，insert会在检查unique key的冲突性是进行一次当前读。</p>
+<h2 id="Cluster-Index：聚簇索引"><a href="#Cluster-Index：聚簇索引" class="headerlink" title="Cluster Index：聚簇索引"></a>Cluster Index：聚簇索引</h2><p>&#160; &#160; &#160; &#160;InnoDB存储引擎的数据组织方式是聚簇索引表：完整的记录，存储在主键索引中（三种情况：有主键，没主键以后唯一索引，没主键没唯一索引），通过聚簇索引就可以获取整条记录。除了聚簇索引外所有索引称为二级索引（Secondary Index）。注：本文会将主键索引/聚簇索引混用。</p>
+<h2 id="2PL：Tow-Phase-Locking"><a href="#2PL：Tow-Phase-Locking" class="headerlink" title="2PL：Tow-Phase Locking"></a>2PL：Tow-Phase Locking</h2><p>&#160; &#160; &#160; &#160;传统RDBMS加锁的一个原则，就是2PL（二阶段锁）：Tow-Phase Locking。2PL是说将事物内锁的操作分为两个阶段：加锁阶段和解锁阶段，并保证加锁阶段和解锁阶段互不干扰。下面，以旧MySQL为例，介绍一下：</p>
+<p><img src="./image/569491-20160531125643852-1513515378.jpg" alt="图片丢失">  </p>
+<p>从图中可以看出，一个事务内，加锁阶段和解锁阶段互不干扰。</p>
+<h2 id="事务隔离级别-Isolation-Leve"><a href="#事务隔离级别-Isolation-Leve" class="headerlink" title="事务隔离级别 Isolation Leve"></a>事务隔离级别 Isolation Leve</h2><p>&#160; &#160; &#160; &#160;隔离级别，是RDBMS的一个关键特性，这里再次简单介绍一下，注意MySQL/InnoDB的RR隔离级别不存在幻读；</p>
+<p>MySQL的四种隔离级别：</p>
+<ul>
+<li>Read Uncommited<br>可以读取未提交数据，会造成脏读。</li>
+<li>Read Commited（RC）<br>只能读取已提交数据。会对读取的数据加锁（记录锁），存在幻读现象。</li>
+<li>Repeatable Read (RR)<br>可重复读，会对记录加数据锁，同时对读取的数据范围加锁，加间隙锁，对满足条件的数据范围不能执行插入操作。不存在幻读现象（MySQL默认级别）。</li>
+<li>Serializable<br>从MVCC并发控制退化到基于锁的并发控制，不区分快照读，当前读，多有操作都加锁，读加S锁，写加X锁，读写冲突，性能低。</li>
+</ul>
+<font color="Brown">注：MySQL/InnoDB引擎默认RR隔离级别，与标准的事务隔离级别不同的是，MySQL中不存在幻读现象，这是由于MySQL利用next-key locks实现了防止幻读。</font>
+
+<h2 id="加锁过程分析"><a href="#加锁过程分析" class="headerlink" title="加锁过程分析"></a>加锁过程分析</h2><h3 id="一条简单的SQL加锁实现分析"><a href="#一条简单的SQL加锁实现分析" class="headerlink" title="一条简单的SQL加锁实现分析"></a>一条简单的SQL加锁实现分析</h3><p>&#160; &#160; &#160; &#160;接下来我们以两条简单的SQL为例，简单分析MySQL/InnoDB引擎下，加锁过程：</p>
+<ul>
+<li><strong>SQL1</strong>：select * from t1 where id=10;</li>
+<li><strong>SQL2</strong>：delete from t1 where id=10;</li>
+</ul>
+<p>针对这个问题，怎么回答？第一印象可能直接想到：</p>
+<ul>
+<li><strong>SQL1</strong>：因为MVCC控制，所以读不加锁。</li>
+<li><strong>SQL2</strong>：对id=10的记录加写锁（走主键索引）。</li>
+</ul>
+<p>这个答案对么？可能对也可能不对，应为已知条件不足，这个问题没有答案，下面我们列一下可能需要的条件：</p>
+<ul>
+<li><strong>条件1</strong>：id列是不是主键？</li>
+<li><strong>条件2</strong>：当前系统的隔离级别是什么？</li>
+<li><strong>条件3</strong>：id不是主键，是不是索引？</li>
+<li><strong>条件4</strong>：id有二级索引，那这个索引是不是唯一索引？</li>
+<li><strong>条件5</strong>：两个sql的执行计划是什么？全表扫描，索引扫描？</li>
+</ul>
+<p>下面我们根据id是否主键，隔离级别组合一下，然后逐一分析每个组合用的什么索引：</p>
+<p><strong><font color="Brown">注：这里做了一个假设，如果有索引，执行计划一定会使用索引进行过滤（索引扫描），实际情况会复杂很多，真正的执行计划需要根据explain分析SQL。</font></strong></p>
+<ul>
+<li><strong>组合1</strong>： id是主键，RC隔离级别</li>
+<li><strong>组合2</strong>： id是二级唯一索引，RC隔离级别</li>
+<li><strong>组合3</strong>： id是二级非唯一索引，RC隔离级别</li>
+<li><strong>组合4</strong>： id是非索引，RC隔离级别</li>
+<li><strong>组合5</strong>： id是主键，RR隔离级别</li>
+<li><strong>组合6</strong>： id是二级唯一索引，RR隔离级别</li>
+<li><strong>组合7</strong>： id是二级非唯一索引，RR隔离级别</li>
+<li><strong>组合8</strong>： id是非索引，RR隔离级别</li>
+<li><strong>组合9</strong>： Serializable隔离级别</li>
+</ul>
+<p>注：<em>前8个组合，RC，RR隔离级别下，SQL1：select全部采用快照读，不加锁，所以主要讨论SQL2</em>。</p>
+<p><strong>组合1：</strong> id主键+RC  </p>
+<p><img src="image/569491-20160531125918696-1671805168.jpg" alt="id主键+RC"></p>
+<p>上图可见，当id为主键时，只需要根据主键索引在id=10上加X锁即可。</p>
+<p><strong>组合2：</strong> id唯一索引+RC</p>
+<p><img src="image/569491-20160531130038446-27860841.jpg" alt="id唯一索引+RC"></p>
+<p>此组合中，id是unique索引，name是主键；delete语句会现根据where条件查询id唯一索引，对unique索引加锁，然后根据unique索引上保存的主键索引获取聚簇索引，加X锁。<br><strong><font color="Brown">如果，id列是：unique索引，那么SQL需要添加两个X锁，一个对应id=10的unique索引，另一个对应聚簇索引[name=’d’,id=10]</font></strong></p>
+<p><strong>组合3：</strong> id非唯一索引+RC</p>
+<p><img src="image/569491-20160531130136258-81724917.jpg" alt="id非唯一索引+RC"></p>
+<p>当id是非唯一的二级索引时，SQL会先查到索引中所有满足id=10条件的索引，加锁，然后根据主键查找对应聚簇索引，加X锁。</p>
+<p><strong>组合4：</strong> id无索引+RC</p>
+<p><img src="image/569491-20160531130239242-1390195296.jpg" alt="id无索引+RC"></p>
+<p>可以看出，当条件列id没有索引时，只能走聚簇索引，进行全表扫描。但实际上只有两条记录符合条件。MySQL/InnoDB引擎，在没有索引的条件上，会把聚簇索引上所有可能的记录都加锁，然后把数据返回Server层，有Server层过滤（<em>注：这里MySQL进行了优化违反了2PL约束，将不符合过滤条件的数据，进行了unlock_row操作，进行释放锁，而符合过滤条件的操作，继续保持锁，到最后事务结束一起释放</em>）。</p>
+<p>上面4个组合中，<strong>都是在RC隔离级别下进行的加锁行为，接下来四种组合是对RR级别下的加锁行为</strong></p>
+<p><strong>组合5：</strong> id主键+RR</p>
+<p>此组合下，id是主键，在RR隔离级别下，加锁与组合1一致。</p>
+<p><strong>组合6：</strong> id唯一索引+RR</p>
+<p>此组合下，与组合2一致。</p>
+<p><strong>组合7：</strong> id非唯一索引+RR  </p>
+<p><img src="image/569491-20160531130411383-483975821.jpg" alt="id非唯一索引+RR"></p>
+<p>可以看出，此时加锁情况与组合3相似，区别是，在RR级别下，增加了GAP锁，GAP锁并不是加在数据上，而是加在数据之间的间隙上，保证，满足条件范围的数据范围不能进行插入操作，这样就可以防止幻读。</p>
+<p>所以：<font color="Brown">结论：在RR级别下，id非唯一索引，InnoDB会先获取满足条件的二级索引列的第一条数据并加上next-key lock（X锁和GAP锁的组合），将对应的聚簇索引加上X锁，然后读取下一条记录，知道没有符合条件的记录。</font></p>
+<p><strong>组合8：</strong> id无索引+RR</p>
+<p><img src="image/569491-20160531130526352-188149774.jpg" alt="id无索引+RR"></p>
+<p>与组合4同理，区别是增加了GAP锁。</p>
+<font color="Brown"><strong>这种情况很恐怖，实际满足条件的数据只有两条，但是整张表会加锁，导致整张表不能，修改，插入。</strong></font>
+
+<p><strong>组合9：</strong> Serializable</p>
+<ul>
+<li>SQL1：会加读锁（X锁）。</li>
+<li>SQL2: 与组合8加锁情况一致。</li>
+</ul>
+<h3 id="复杂SQL分析："><a href="#复杂SQL分析：" class="headerlink" title="复杂SQL分析："></a>复杂SQL分析：</h3><p><img src="image/569491-20160531130813461-508526456.jpg" alt="SQL例子"></p>
+<p>&#160; &#160; &#160; &#160;假定在RR级别下，图中SQL走的是idx_t1_pu索引。</p>
+<p>这里分析条件构成结果：</p>
+<ul>
+<li>Index Key: pubtime&gt;1 and puptime&lt;20。此条件，用于确定SQL在idx_t1_pu索引上查询范围。</li>
+<li>Index Filter： userid=’hdc’。此条件，用于在idx_t1_pu上进行过滤。</li>
+<li>Table Filter：comment is not null。此条件，索引上无法过滤，只能通过聚簇索引获取所有数据，进行过滤。</li>
+</ul>
+<p>分析完条件构成后，我们看看SQL加锁情况：</p>
+<p><img src="image/569491-20160531130852930-842188790.jpg" alt="SQL加锁"></p>
+<p>从图中可以看出，在RR隔离级别下，由Index Key所以确定的范围，加上了GAP锁；Index Filter确定的数据何时过滤要看MySQL版本，在5.6版本之前，不支持Index Condition Pushdown（ICP），过滤条件需要在Server层过滤，所以索引需要加上X锁，而5.6后版本支持ICP，条件在二级索引处即可过滤，所以，过滤后的数据不需要添加X锁，也就是图中红色锁，不需要添加；而Table Filter条件需要在Server层处理，所有全部需要添加X锁。</p>
+<font color="Brown"><strong>结论：在RR隔离条件下，针对一个复杂sql。首先：先分析条件组成（Index Key；Index Filter；Table Filter）;然后确定是否支持ICP；最后确定加锁顺序。</strong></font>
+
+<h2 id="死锁原理与分析"><a href="#死锁原理与分析" class="headerlink" title="死锁原理与分析"></a>死锁原理与分析</h2><p>本文前面部分基本覆盖MySQL/InnoDB所有加锁规则，接下来我们就可以：</p>
+<ul>
+<li>根据MySQL加锁规则，写出不会发生死锁的SQL；</li>
+<li>根据MySQL加锁规则，定位生产环境死锁原因；</li>
+</ul>
+<p>接下来我们看两个死锁的例子：</p>
+<p><img src="image/569491-20160531131107930-1938279375.jpg" alt="doublesql"></p>
+<p><img src="image/569491-20160531131120930-2048731464.jpg" alt="onesql"></p>
+<h2 id="本文相关知识点："><a href="#本文相关知识点：" class="headerlink" title="本文相关知识点："></a>本文相关知识点：</h2><ul>
+<li>Cluster Index</li>
+<li>MVCC</li>
+<li>Tow-Phase Locking</li>
+<li>Isolation Level</li>
+<li>Index Condition Pushdown</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://wjy-jy.github.io/2018/11/01/hello-world/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WJY">
+      <meta itemprop="description" content="王加雨的技术生活博客！">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WJY的小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/01/hello-world/" itemprop="url">
+                  Hello World
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-01 19:42:00" itemprop="dateCreated datePublished" datetime="2018-11-01T19:42:00+08:00">2018-11-01</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">WJY</p>
+              <p class="site-description motion-element" itemprop="description">王加雨的技术生活博客！</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright"> &copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WJY</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.5.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
